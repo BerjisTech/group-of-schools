@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import { Home, About, Contact, NotFound } from './components';
+import { Home, About, Contact, Search, NotFound } from './components';
 
 const NLIVModule = () => {
   return (
@@ -8,6 +8,7 @@ const NLIVModule = () => {
       <Route path="/" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="contact" element={<Contact />} />
+      <Route path="search" element={<Search />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

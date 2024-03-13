@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Sharp');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+/* Fontawesome  */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
 
 body {
   margin: 0;
@@ -12,6 +22,97 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.word_cloud_hero {
+  background: url("/public/assets/images/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.vertical-lr {
+  writing-mode: vertical-lr;
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+/* For Webkit browsers like Chrome, Safari */
+::-webkit-scrollbar {
+  width: 5px;
+  /* Width of the vertical scrollbar */
+  height: 1px;
+  /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* Background color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #020617;
+  /* Color of the scrollbar thumb */
+}
+
+* {
+  scrollbar-color: #020617 transparent;
+  /* Thumb and track color */
+  scrollbar-width: thin;
+  /* Width of the scrollbar */
+  transition: all ease-in-out;
+  transition-duration: 500ms;
+}
+
+.sticky {
+  position: sticky !important;
+  top: 0 !important;
+
+  &.sticky--hide {
+    transform: translateY(-100%) !important;
+  }
+
+  &.sticky--show {
+    transform: translateY(0) !important;
+  }
+}
+
+:root {
+  --custom-vh: 100vh;
+  --custom-vw: 100vh;
+  --custom-px: 100px;
+}
+
+.custom-height {
+  height: calc(var(--custom-vh) - var(--custom-px));
+}
+
+.custom-width {
+  width: calc(var(--custom-vw) - var(--custom-px));
+}
+
+.no-select-color::selection {
+  background: transparent;
+  /* or any other color you prefer */
+  color: inherit;
+  /* or any other color you prefer */
+}
+
+.text-outline {
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 @import 'tailwindcss/base';
