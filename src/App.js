@@ -22,17 +22,17 @@ function App() {
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
+          <Route path="/ai/*" element={<AIModule />} />
+          <Route path="/courses/*" element={<CoursesModule />} />
+          <Route path="/diy/*" element={<DiyModule />} />
+          <Route path="/donations/*" element={<DonationsModule />} />
+          <Route path="/exams/*" element={<ExamsModule />} />
+          <Route path="/forums/*" element={<ForumsModule />} />
+          <Route path="/library/*" element={<LibraryModule />} />
+          <Route path="/schools/*" element={<SchoolsModule />} />
+          <Route path="/suppliers/*" element={<SuppliersModule />} />
+          <Route path="/users/*" element={<UsersModule />} />
           <Route path="/*" element={<NLIVModule />} />
-          <Route path="ai" element={<AIModule />} />
-          <Route path="courses" element={<CoursesModule />} />
-          <Route path="diy" element={<DiyModule />} />
-          <Route path="donations" element={<DonationsModule />} />
-          <Route path="exams" element={<ExamsModule />} />
-          <Route path="forums" element={<ForumsModule />} />
-          <Route path="library" element={<LibraryModule />} />
-          <Route path="schools" element={<SchoolsModule />} />
-          <Route path="suppliers" element={<SuppliersModule />} />
-          <Route path="users" element={<UsersModule />} />
         </Routes>
       </Suspense>
     </Router>
