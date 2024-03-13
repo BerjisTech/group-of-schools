@@ -1,10 +1,10 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-const SchoolsModules = () => {
+const SchoolsModule = () => {
   return (
-    <div>SchoolsModules</div>
+    <Routes></Routes>
   )
 }
 
-export default SchoolsModules
+export default SchoolsModule

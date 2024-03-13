@@ -1,32 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
-import AIModule from './modules/ai/AIModule';
-import CoursesModule from './modules/courses/CoursesModule';
-import DiyModule from './modules/diy/DiyModule';
-import DonationsModule from './modules/donations/DonationsModule';
-import ExamsModule from './modules/exams/ExamsModule';
-import ForumsModule from './modules/forums/ForumsModule';
-import LibraryModules from './modules/library/LibraryModule';
-import NLIVModules from './modules/nliv/NLIVModule';
-import SchoolsModules from './modules/schools/SchoolsModule';
-import SuppliersModule from './modules/suppliers/SuppliersModule';
-import UsersModule from './modules/user/UsersModule';
+import React, { Suspense, lazy } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+const NLIVModule = lazy(() => import('./modules/nliv/NLIVModule'));
+const AIModule = lazy(() => import('./modules/ai/AIModule'));
+const CoursesModule = lazy(() => import('./modules/courses/CoursesModule'));
+const DiyModule = lazy(() => import('./modules/diy/DiyModule'));
+const DonationsModule = lazy(() => import('./modules/donations/DonationsModule'));
+const ExamsModule = lazy(() => import('./modules/exams/ExamsModule'));
+const ForumsModule = lazy(() => import('./modules/forums/ForumsModule'));
+const LibraryModule = lazy(() => import('./modules/library/LibraryModule'));
+const SchoolsModule = lazy(() => import('./modules/schools/SchoolsModule'));
+const SuppliersModule = lazy(() => import('./modules/suppliers/SuppliersModule'));
+const UsersModule = lazy(() => import('./modules/user/UsersModule'));
+
 
 function App() {
   return (
-    <div>
-      <AIModule />
-      <CoursesModule />
-      <DiyModule />
-      <DonationsModule />
-      <ExamsModule />
-      <ForumsModule />
-      <LibraryModules />
-      <NLIVModules />
-      <SchoolsModules />
-      <SuppliersModule />
-      <UsersModule />
-    </div>
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/*" element={<NLIVModule />} />
+          <Route path="ai" element={<AIModule />} />
+          <Route path="courses" element={<CoursesModule />} />
+          <Route path="diy" element={<DiyModule />} />
+          <Route path="donations" element={<DonationsModule />} />
+          <Route path="exams" element={<ExamsModule />} />
+          <Route path="forums" element={<ForumsModule />} />
+          <Route path="library" element={<LibraryModule />} />
+          <Route path="schools" element={<SchoolsModule />} />
+          <Route path="suppliers" element={<SuppliersModule />} />
+          <Route path="users" element={<UsersModule />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
 }
 

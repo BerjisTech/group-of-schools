@@ -1,9 +1,9 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 const SuppliersModule = () => {
   return (
-    <div>SuppliersModule</div>
+    <Routes></Routes>
   )
 }
 

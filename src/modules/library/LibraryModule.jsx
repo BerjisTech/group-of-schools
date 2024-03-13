@@ -1,10 +1,10 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-const LibraryModules = () => {
+const LibraryModule = () => {
   return (
-    <div>LibraryModules</div>
+    <Routes></Routes>
   )
 }
 
-export default LibraryModules
+export default LibraryModule
